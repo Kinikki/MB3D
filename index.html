@@ -8,32 +8,31 @@
 </head>
 <body>
 
-<div class="sparkles"></div>
+<div class="glitter"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="logo">🌈 MB3D Creations</a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
 
 <header class="hero">
-    <nav class="navbar">
-        <a href="index.html" class="logo">🌈 MB3D Creations</a>
-
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="about.html">About Us</a>
-            <a href="creators.html">Creator Credits</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-
-    <div class="printer-wrap">
-        <div class="filament"></div>
+    <div class="printer-animation">
+        <div class="rainbow-filament"></div>
         <div class="printer-head">
             <div class="nozzle"></div>
         </div>
-        <h1 class="printed-logo">MB3D Creations</h1>
     </div>
 
-    <p class="tagline">Made by Mommy & Bean • Printed Layer by Layer</p>
+    <h1 class="hero-title">MB3D Creations</h1>
+    <p class="hero-subtitle">Made by Mommy & Bean • Printed Layer by Layer</p>
 
     <div class="hero-buttons">
         <a href="#shop" class="btn primary">Shop Creations</a>
@@ -43,33 +42,43 @@
 
 <main>
 
-<section class="intro">
-    <h2>Colorful 3D Printed Gifts, Toys & Creations</h2>
+<section class="welcome">
+    <h2>Colorful 3D Printed Gifts, Toys & More</h2>
     <p>
-        We create fun, made-to-order 3D printed items including articulated animals,
-        keychains, organizers, decorations, gifts, and more.
+        We create made-to-order 3D printed creations including articulated animals,
+        keychains, fidgets, organizers, décor, gifts, and more.
     </p>
 </section>
 
-<section class="features">
-    <div class="feature-card">🌈 Custom Colors</div>
-    <div class="feature-card">🖨️ Printed to Order</div>
-    <div class="feature-card">🎁 Great for Gifts</div>
-    <div class="feature-card">💜 Family Owned</div>
+<section class="quick-cards">
+    <div class="quick-card">🌈 Custom Colors</div>
+    <div class="quick-card">🖨️ Printed to Order</div>
+    <div class="quick-card">🎁 Great Gifts</div>
+    <div class="quick-card">💜 Family Owned</div>
 </section>
 
 <section id="shop" class="shop-section">
     <h2>Shop Creations</h2>
-    <p class="section-note">Photos and products are being added soon. Buttons can link to Square when ready.</p>
+    <p class="section-note">
+        We are still printing and photographing our first collection. More products coming soon!
+    </p>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-category="All">All</button>
+        <button class="filter-btn" data-category="Articulated Creatures">Creatures</button>
+        <button class="filter-btn" data-category="Keychains">Keychains</button>
+        <button class="filter-btn" data-category="Home Organization">Home</button>
+        <button class="filter-btn" data-category="Gifts">Gifts</button>
+    </div>
 
     <div class="product-grid" id="productGrid"></div>
 </section>
 
-<section class="custom-order">
-    <h2>Looking for something specific?</h2>
+<section class="custom-section">
+    <h2>Need something special?</h2>
     <p>
-        Need a special color, gift, keychain, organizer, or custom idea?
-        Send us a message and we’ll let you know what we can do.
+        Want a different color, a personalized item, or a custom order?
+        Send us an email and tell us what you’re looking for.
     </p>
     <a href="contact.html" class="btn primary">Contact Us</a>
 </section>
@@ -78,8 +87,8 @@
 
 <footer>
     <p>© 2026 MB3D Creations</p>
-    <p>Made by Mommy & Bean • Printed with love, glitter, and rainbow filament 🌈</p>
-    <p><a href="creators.html">Creator Credits & Licensing Info</a></p>
+    <p>Made with ❤️, glitter, and rainbow filament.</p>
+    <p><a href="about.html#credits">Creator Credits & Licensing</a></p>
 </footer>
 
 <script src="products.js"></script>
