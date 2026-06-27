@@ -6,72 +6,83 @@
     <title>MB3D Creations</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <div class="filament-line"></div>
+<div class="sparkles"></div>
 
-    <div class="printer">
-        <div class="printer-head"></div>
-        <div class="printer-nozzle"></div>
+<header class="hero">
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌈 MB3D Creations</a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="about.html">About Us</a>
+            <a href="creators.html">Creator Credits</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="printer-wrap">
+        <div class="filament"></div>
+        <div class="printer-head">
+            <div class="nozzle"></div>
+        </div>
+        <h1 class="printed-logo">MB3D Creations</h1>
     </div>
 
-    <h1>🌈 MB3D Creations 🌈</h1>
-    <p>Made-to-Order 3D Printed Creations</p>
+    <p class="tagline">Made by Mommy & Bean • Printed Layer by Layer</p>
+
+    <div class="hero-buttons">
+        <a href="#shop" class="btn primary">Shop Creations</a>
+        <a href="contact.html" class="btn secondary">Request Custom Order</a>
+    </div>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#gallery">What We Make</a>
-    <a href="#contact">Contact</a>
-    <button id="themeButton">🌙 Dark Mode</button>
-</nav>
+<main>
 
-<section id="about">
-    <h2>Welcome!</h2>
-
+<section class="intro">
+    <h2>Colorful 3D Printed Gifts, Toys & Creations</h2>
     <p>
-        Welcome to <strong>MB3D Creations</strong>!
+        We create fun, made-to-order 3D printed items including articulated animals,
+        keychains, organizers, decorations, gifts, and more.
     </p>
-
-    <p>
-        We're a family-owned 3D printing shop creating fun, high-quality 3D printed gifts,
-        toys, organizers, home décor, keychains, and more.
-    </p>
-
-    <p>
-        Every item is printed to order with care, and many products can be
-        personalized with your favorite colors.
-    </p>
-
-    <a class="button" href="#contact">Request an Order</a>
 </section>
 
-<section id="gallery">
-    <h2>What We Make</h2>
-
-    <div class="cards">
-        <div class="card">🦄 Articulated Animals</div>
-        <div class="card">🔑 Keychains</div>
-        <div class="card">🏠 Home Organization</div>
-        <div class="card">🎁 Gifts</div>
-        <div class="card">🌈 Colorful Decor</div>
-        <div class="card">✨ Much More!</div>
-    </div>
+<section class="features">
+    <div class="feature-card">🌈 Custom Colors</div>
+    <div class="feature-card">🖨️ Printed to Order</div>
+    <div class="feature-card">🎁 Great for Gifts</div>
+    <div class="feature-card">💜 Family Owned</div>
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
+<section id="shop" class="shop-section">
+    <h2>Shop Creations</h2>
+    <p class="section-note">Photos and products are being added soon. Buttons can link to Square when ready.</p>
 
-    <p>Email: coming soon!</p>
-    <p>Facebook • TikTok • Etsy coming soon!</p>
+    <div class="product-grid" id="productGrid"></div>
 </section>
+
+<section class="custom-order">
+    <h2>Looking for something specific?</h2>
+    <p>
+        Need a special color, gift, keychain, organizer, or custom idea?
+        Send us a message and we’ll let you know what we can do.
+    </p>
+    <a href="contact.html" class="btn primary">Contact Us</a>
+</section>
+
+</main>
 
 <footer>
-    <p>© 2026 MB3D Creations • Made with ❤️ Layer by Layer</p>
+    <p>© 2026 MB3D Creations</p>
+    <p>Made by Mommy & Bean • Printed with love, glitter, and rainbow filament 🌈</p>
+    <p><a href="creators.html">Creator Credits & Licensing Info</a></p>
 </footer>
 
+<script src="products.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
