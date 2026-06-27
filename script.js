@@ -7,10 +7,34 @@ if (menuToggle && navLinks) {
     });
 }
 
-const productGrid = document.getElementById("productGrid");
+const glitter = document.querySelector(".glitter");
 
-if (productGrid && typeof products !== "undefined") {
-    products.forEach(product => {
+if (glitter) {
+    for (let i = 0; i < 40; i++) {
+        const sparkle = document.createElement("span");
+        sparkle.className = "sparkle";
+        sparkle.style.left = Math.random() * 100 + "%";
+        sparkle.style.animationDelay = Math.random() * 8 + "s";
+        sparkle.style.animationDuration = 5 + Math.random() * 7 + "s";
+        glitter.appendChild(sparkle);
+    }
+}
+
+const productGrid = document.getElementById("productGrid");
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+function displayProducts(category = "All") {
+    if (!productGrid || typeof products === "undefined") {
+        return;
+    }
+
+    productGrid.innerHTML = "";
+
+    const filteredProducts = category === "All"
+        ? products
+        : products.filter(product => product.category === category);
+
+    filteredProducts.forEach(product => {
         const card = document.createElement("div");
         card.className = "product-card";
 
@@ -32,6 +56,7 @@ if (productGrid && typeof products !== "undefined") {
 
         card.innerHTML = `
             ${imageContent}
+
             <div class="product-info">
                 ${availability}
                 <h3>${product.name}</h3>
@@ -39,6 +64,7 @@ if (productGrid && typeof products !== "undefined") {
                 <p>${product.description}</p>
                 <p><strong>Colors:</strong> ${product.colors}</p>
                 <p class="price">${product.price}</p>
+
                 <div class="product-buttons">
                     ${squareButton}
                     ${paypalButton}
@@ -50,15 +76,12 @@ if (productGrid && typeof products !== "undefined") {
     });
 }
 
-const sparkleContainer = document.querySelector(".sparkles");
+displayProducts();
 
-if (sparkleContainer) {
-    for (let i = 0; i < 35; i++) {
-        const sparkle = document.createElement("span");
-        sparkle.className = "sparkle";
-        sparkle.style.left = Math.random() * 100 + "%";
-        sparkle.style.animationDelay = Math.random() * 8 + "s";
-        sparkle.style.animationDuration = 5 + Math.random() * 6 + "s";
-        sparkleContainer.appendChild(sparkle);
-    }
-}
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        displayProducts(button.dataset.category);
+    });
+});
