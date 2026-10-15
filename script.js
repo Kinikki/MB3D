@@ -35,6 +35,10 @@ function displayProducts(category = "All") {
         : products.filter(product => product.category === category);
 
     filteredProducts.forEach(product => {
+        if (product.configurable === "ghosts") {
+            productGrid.appendChild(createGhostCard(product));
+            return;
+        }
         const card = document.createElement("div");
         card.className = "product-card";
 
@@ -85,3 +89,4 @@ filterButtons.forEach(button => {
         displayProducts(button.dataset.category);
     });
 });
+
