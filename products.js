@@ -82,7 +82,7 @@ const products = [
 const ghostCollection = {
     email: "info.mb3dcreations@gmail.com",
     groupImage: "assets/ghosts/group.png",
-    imageNote: "Digital model previews. Finished-print photos coming soon.",
+    imageNote: "Digital model previews.",
     designs: [
         { id: "boo-bell", name: "Boo Bell", image: "assets/ghosts/boo-bell.png" },
         { id: "shy-spook", name: "Shy Spook", image: "assets/ghosts/shy-spook.png" },
