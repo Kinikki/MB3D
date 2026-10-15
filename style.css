@@ -246,6 +246,36 @@ a {
     font-weight: 800;
 }
 
+/* Original MB3D logo, revealed as a print on the build plate. */
+.logo-brand { display: flex; align-items: center; gap: 9px; }
+.logo-brand img { width: 48px; height: 48px; object-fit: contain; border-radius: 9px; }
+.hero {
+    min-height: auto;
+    padding: 46px 20px 56px;
+    background: radial-gradient(ellipse at 15% 30%, #fbe5f0, transparent 58%),
+        radial-gradient(ellipse at 90% 40%, #e4f6f6, transparent 60%), #f6f0fa;
+    animation: none;
+}
+.brand-heading { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.brand-printer { width: min(100%, 440px); margin: 0 auto; }
+.brand-print-stage { position: relative; isolation: isolate; background: white; border-radius: 22px; box-shadow: 0 15px 45px #67527b19; }
+.brand-logo-image { width: 100%; height: auto; display: block; border-radius: 22px; }
+.brand-print-bed { height: 6px; position: absolute; bottom: -3px; left: 3%; width: 94%; border-radius: 6px; background: #4b4258; box-shadow: 0 5px 0 #d8c9e7; }
+.brand-moving-nozzle { display: none; position: absolute; top: var(--print-y, 100%); left: var(--nozzle-x, 9%); width: clamp(40px, 12vw, 62px); transform: translate(-50%, -100%); filter: drop-shadow(0 3px 3px #30243c25); z-index: 3; pointer-events: none; }
+.brand-moving-nozzle svg { width: 100%; height: auto; display: block; }
+.brand-layer-line { display: none; position: absolute; left: 7%; right: 7%; height: 2px; top: var(--print-y, 100%); background: linear-gradient(90deg, transparent, #f1a8cd, #a8e4e3, transparent); box-shadow: 0 0 9px #efa9cc60; z-index: 2; pointer-events: none; }
+.is-printing .brand-moving-nozzle, .is-printing .brand-layer-line { display: block; }
+.brand-print-replay { margin-top: 17px; padding: 7px 13px; border: 1px solid #d5c5e1; border-radius: 20px; background: #ffffffb8; color: #614476; font: inherit; font-size: .82rem; cursor: pointer; }
+.brand-print-replay:disabled { opacity: .55; cursor: default; }
+.brand-print-replay:focus-visible { outline: 3px solid #795599; outline-offset: 3px; }
+.hero .hero-subtitle { color: #5d496d; font-weight: 700; margin-top: 22px; }
+.hero .primary { background: #6a4c93; color: white; }
+.hero .secondary { background: white; color: #6a4c93; border: 1px solid #d3c3e1; }
+@media (prefers-reduced-motion: reduce) {
+    .brand-logo-image { clip-path: none !important; }
+    .brand-moving-nozzle, .brand-layer-line, .brand-print-replay { display: none !important; }
+}
+
 .hero-buttons {
     margin-top: 25px;
     display: flex;
@@ -766,3 +796,9 @@ footer a {
     }
 }
 
+
+@media (max-width: 700px) {
+    .hero { min-height: auto; padding: 32px 16px 42px; }
+    .logo-brand { font-size: 1rem; gap: 7px; }
+    .logo-brand img { width: 40px; height: 40px; }
+}

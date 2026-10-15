@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB3D Creations</title>
-    <link rel="stylesheet" href="style.css?v=ghosts-20261015-clean">
+    <link rel="stylesheet" href="style.css?v=brand-20261015">
 </head>
 <body>
 
 <div class="glitter"></div>
 
 <nav class="navbar">
-    <a href="index.html" class="logo">🌈 MB3D Creations</a>
+    <a href="index.html" class="logo logo-brand"><img src="assets/mb3d-logo.webp" alt="" width="48" height="48"> <span>MB3D Creations</span></a>
 
     <button class="menu-toggle" id="menuToggle">☰</button>
 
@@ -24,14 +24,26 @@
 </nav>
 
 <header class="hero">
-    <div class="printer-animation">
-        <div class="rainbow-filament"></div>
-        <div class="printer-head">
-            <div class="nozzle"></div>
+    <h1 class="brand-heading">MB3D Creations</h1>
+    <div class="brand-printer" data-logo-printer>
+        <div class="brand-print-stage">
+            <img class="brand-logo-image" src="assets/mb3d-logo.webp" alt="MB3D Creations, pastel printer-head logo" width="1254" height="1254" fetchpriority="high">
+            <div class="brand-layer-line" aria-hidden="true"></div>
+            <div class="brand-moving-nozzle" aria-hidden="true">
+                <svg viewBox="0 0 76 86" fill="none">
+                    <path d="M38 0V17" stroke="#b49ad1" stroke-width="5"/>
+                    <rect x="13" y="16" width="50" height="39" rx="7" fill="#282432" stroke="#1e1b26" stroke-width="2"/>
+                    <rect x="18" y="21" width="40" height="27" rx="4" fill="#edb5d4"/>
+                    <path d="M26 28H50M26 34H50M26 40H50" stroke="#7b526c" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M27 55H49V65H27Z" fill="#857c8d"/>
+                    <path d="M28 65H48L38 82Z" fill="#e8bd60" stroke="#51412f" stroke-width="2"/>
+                    <path d="M38 82V86" stroke="#ef8cbd" stroke-width="3"/>
+                </svg>
+            </div>
+            <div class="brand-print-bed" aria-hidden="true"></div>
         </div>
+        <button class="brand-print-replay" type="button" hidden>Print again</button>
     </div>
-
-    <h1 class="hero-title">MB3D Creations</h1>
     <p class="hero-subtitle">Made by Mommy & Bean • Printed Layer by Layer</p>
 
     <div class="hero-buttons">
@@ -94,6 +106,7 @@
 <script src="products.js?v=ghosts-20261015-clean"></script>
 <script src="ghosts.js?v=ghosts-20261015-clean"></script>
 <script src="script.js?v=ghosts-20261015-clean"></script>
+<script src="brand-printer.js?v=brand-20261015"></script>
 </body>
 </html>
 
