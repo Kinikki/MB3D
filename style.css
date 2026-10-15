@@ -860,3 +860,8 @@ body {
 footer { background: #110e16; color: #d1c1dd; border-top: 1px solid #3b3047; }
 footer a { color: #e7c6e2; }
 .sparkle { opacity: .4; box-shadow: 0 0 8px #ecd4f0, 0 0 14px #d6b6eb50; }
+
+/* Finished-print gallery views. */
+.ghost-photo-tabs { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.ghost-photo-tabs button { border:1px solid #bca7cf; border-radius:10px; padding:10px 12px; background:#251f31; color:#f1e6fa; font:inherit; cursor:pointer; }
+.ghost-photo-tabs button:focus-visible { outline:3px solid #d7b8f5; outline-offset:3px; }

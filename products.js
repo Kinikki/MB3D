@@ -4,7 +4,7 @@ const products = [
         name: "Little Ghosts",
         price: "$2.00–$7.00",
         category: "Gifts",
-        image: "assets/ghosts/group.png",
+        image: "assets/ghosts/collection.jpg",
         description: "Pick a little personality for your shelf, desk, or spooky collection. Choose one ghost or build a matching-size trio.",
         available: true,
         configurable: "ghosts"
@@ -77,35 +77,37 @@ const products = [
     }
 ];
 
-// Replace these image paths with finished-print photos when ready.
+// Finished-print photographs supplied by MB3D Creations.
 // Keep IDs stable so saved customer selections continue to work.
 const ghostCollection = {
     email: "info.mb3dcreations@gmail.com",
-    groupImage: "assets/ghosts/group.png",
-    imageNote: "Digital model previews.",
+    groupImage: "assets/ghosts/collection.jpg",
+    imageNote: "Photos show finished prints. Pink and white examples are Large (100%), green Medium (75%), and blue Small (50%). Choose any available color for your ghost. Sizes vary by design.",
+    sizeImage: "assets/ghosts/sizes.jpg",
+    glowImage: "assets/ghosts/glow.jpg",
     designs: [
-        { id: "boo-bell", name: "Boo Bell", image: "assets/ghosts/boo-bell.png" },
-        { id: "shy-spook", name: "Shy Spook", image: "assets/ghosts/shy-spook.png" },
-        { id: "little-gasp", name: "Little Gasp", image: "assets/ghosts/little-gasp.png" },
-        { id: "bow-peep", name: "Bow Peep", image: "assets/ghosts/bow-peep.png" },
-        { id: "shy-ribbon", name: "Shy Ribbon", image: "assets/ghosts/shy-ribbon.png" },
-        { id: "dapper-boo", name: "Dapper Boo", image: "assets/ghosts/dapper-boo.png" },
-        { id: "headphone-haunt", name: "Headphone Haunt", image: "assets/ghosts/headphone-haunt.png" },
-        { id: "beanie-boo", name: "Beanie Boo", image: "assets/ghosts/beanie-boo.png" },
-        { id: "brainy-boo", name: "Brainy Boo", image: "assets/ghosts/brainy-boo.png" }
+        { id: "boo-bell", name: "Classic Smile", image: "assets/ghosts/classic-smile.jpg" },
+        { id: "shy-spook", name: "Leaning Smile", image: "assets/ghosts/leaning-smile.jpg" },
+        { id: "little-gasp", name: "Surprised", image: "assets/ghosts/surprised.jpg" },
+        { id: "bow-peep", name: "Top Bow", image: "assets/ghosts/top-bow.jpg" },
+        { id: "shy-ribbon", name: "Side Bow", image: "assets/ghosts/side-bow.jpg" },
+        { id: "dapper-boo", name: "Bow Tie", image: "assets/ghosts/bow-tie.jpg" },
+        { id: "headphone-haunt", name: "Headphones", image: "assets/ghosts/headphones.jpg" },
+        { id: "beanie-boo", name: "Beanie", image: "assets/ghosts/beanie.jpg" },
+        { id: "brainy-boo", name: "Glasses", image: "assets/ghosts/glasses.jpg" }
     ],
     // Prices in cents. Packs contain three ghosts, all the selected size.
     sizes: [
-        { id: "small", name: "Small", single: 200, trio: 500 },
-        { id: "medium", name: "Medium", single: 250, trio: 600 },
-        { id: "large", name: "Large", single: 300, trio: 700 }
+        { id: "small", name: "Small (50%)", single: 200, trio: 500 },
+        { id: "medium", name: "Medium (75%)", single: 250, trio: 600 },
+        { id: "large", name: "Large (100%)", single: 300, trio: 700 }
     ],
     colors: [
         { id: "white", name: "White", swatch: "#ffffff" },
-        { id: "blue-glow", name: "Blue glow", swatch: "#b3dff8" },
-        { id: "green-glow", name: "Green glow", swatch: "#c0e9ad" },
-        { id: "pink-glow", name: "Pink glow", swatch: "#f6c6df" },
-        { id: "yellow-glow", name: "Yellow glow", swatch: "#faedaa" }
+        { id: "blue-glow", name: "Glow Blue", swatch: "#b3dff8" },
+        { id: "green-glow", name: "Glow Green", swatch: "#c0e9ad" },
+        { id: "pink-glow", name: "Glow Pink", swatch: "#f6c6df" },
+        { id: "yellow-glow", name: "Glow Yellow", swatch: "#faedaa" }
     ]
 };
 
