@@ -54,8 +54,12 @@ function createGhostCard(product) {
     card.id = "little-ghosts";
     card.innerHTML = `
         <div class="ghost-gallery">
-            <img class="ghost-main-image" src="${ghostEscape(ghostCollection.groupImage)}" alt="Little Ghosts collection, digital model previews" width="720" height="720">
-            <button type="button" class="ghost-show-collection">View the whole collection</button>
+            <img class="ghost-main-image" src="${ghostEscape(ghostCollection.groupImage)}" alt="Little Ghosts collection, finished 3D prints" width="720" height="720">
+            <div class="ghost-photo-tabs" role="group" aria-label="Product photos">
+                <button type="button" class="ghost-show-collection">Collection</button>
+                <button type="button" class="ghost-show-sizes">Compare sizes</button>
+                <button type="button" class="ghost-show-glow">Glow photo</button>
+            </div>
             <p class="ghost-image-note">${ghostEscape(ghostCollection.imageNote)}</p>
         </div>
         <div class="product-info ghost-info">
@@ -102,7 +106,7 @@ function createGhostCard(product) {
 
     function showDesign(design) {
         mainImage.src = design.image;
-        mainImage.alt = `${design.name}, digital model preview`;
+        mainImage.alt = `${design.name}, finished 3D print`;
     }
 
     function designPicker(index) {
@@ -197,7 +201,15 @@ function createGhostCard(product) {
     form.addEventListener("submit", event => event.preventDefault());
     card.querySelector(".ghost-show-collection").addEventListener("click", () => {
         mainImage.src = ghostCollection.groupImage;
-        mainImage.alt = "Little Ghosts collection, digital model previews";
+        mainImage.alt = "Little Ghosts collection, finished 3D prints";
+    });
+    card.querySelector(".ghost-show-sizes").addEventListener("click", () => {
+        mainImage.src = ghostCollection.sizeImage;
+        mainImage.alt = "Size comparison: Large pink ghost at 100%, Medium green at 75%, Small blue at 50%";
+    });
+    card.querySelector(".ghost-show-glow").addEventListener("click", () => {
+        mainImage.src = ghostCollection.glowImage;
+        mainImage.alt = "Glow filament ghosts photographed in the dark";
     });
     card.querySelector(".ghost-copy").addEventListener("click", async () => {
         const text = getGhostOrderText(state);
