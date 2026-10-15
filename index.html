@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MB3D Creations</title>
-    <link rel="stylesheet" href="style.css?v=brand-printhead-20261015">
+    <link rel="stylesheet" href="style.css?v=dark-pastel-20261015">
 </head>
 <body>
 
@@ -26,7 +26,11 @@
 <header class="hero">
     <svg class="brand-filter-defs" width="0" height="0" aria-hidden="true" focusable="false">
         <defs><filter id="brand-clean-edges" color-interpolation-filters="sRGB">
-            <feComponentTransfer><feFuncA type="linear" slope="4" intercept="-2"/></feComponentTransfer>
+            <feComponentTransfer result="logo-ink"><feFuncA type="linear" slope="4" intercept="-2"/></feComponentTransfer>
+            <feMorphology in="logo-ink" operator="dilate" radius="1.25" result="logo-edge"/>
+            <feFlood flood-color="#eeddf6" result="pastel-edge"/>
+            <feComposite in="pastel-edge" in2="logo-edge" operator="in" result="outlined"/>
+            <feMerge><feMergeNode in="outlined"/><feMergeNode in="logo-ink"/></feMerge>
         </filter></defs>
     </svg>
     <h1 class="brand-heading">MB3D Creations</h1>
@@ -39,7 +43,6 @@
                     <img class="brand-actual-printhead" src="assets/mb3d-printhead.webp" alt="" width="1024" height="1024" fetchpriority="high">
                 </div>
             </div>
-            <div class="brand-print-bed" aria-hidden="true"></div>
         </div>
         <button class="brand-print-replay" type="button" hidden>Print again</button>
     </div>

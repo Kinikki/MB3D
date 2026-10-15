@@ -262,7 +262,6 @@ a {
 .brand-wordmark-window { position: relative; aspect-ratio: 1.5; }
 .brand-logo-image { width: 100%; height: 100%; object-fit: contain; display: block; filter: url(#brand-clean-edges); }
 .brand-filter-defs { position: absolute; pointer-events: none; }
-.brand-print-bed { height: 4px; position: absolute; bottom: 0; left: 6%; width: 88%; border-radius: 6px; background: #5b4a68; box-shadow: 0 4px 0 #d8c9e7; }
 .brand-moving-nozzle { display: block; position: absolute; top: var(--print-y, 0%); left: var(--nozzle-x, 50%); width: 37%; transform: translate(-35.5%, -95.4%); z-index: 3; pointer-events: none; }
 .brand-actual-printhead { width: 100%; height: auto; display: block; }
 .brand-layer-line { display: none; position: absolute; left: 6%; right: 6%; height: 2px; top: var(--print-y, 0%); background: linear-gradient(90deg, transparent, #f1a8cd, #a8e4e3, transparent); z-index: 2; pointer-events: none; }
@@ -805,3 +804,59 @@ footer a {
     .logo-brand { font-size: 1rem; gap: 7px; }
     .logo-brand img { width: 40px; height: 40px; }
 }
+
+/* Dark canvas with soft pastel accents. Product photos keep their true colors. */
+:root { color-scheme: dark; }
+body {
+    color: #f2eaf7;
+    background: radial-gradient(ellipse at 5% 10%, #d79cc610, transparent 35%),
+        radial-gradient(ellipse at 95% 25%, #b0e4df0d, transparent 38%), #17141d;
+}
+.navbar { background: #1e1925ed; box-shadow: 0 8px 25px #0003; border-bottom: 1px solid #3b3047; }
+.nav-links a:hover { color: #f1b4d2; }
+.menu-toggle { background: #d7b7eb; color: #251b2f; }
+.hero {
+    background: radial-gradient(ellipse at 18% 40%, #e1a3cf12, transparent 58%),
+        radial-gradient(ellipse at 87% 35%, #b3e6df10, transparent 60%), #17141d;
+}
+.hero .hero-subtitle { color: #dfcfe9; }
+.primary, .hero .primary { background: #d6b6eb; color: #241a2c; }
+.secondary, .hero .secondary { background: #302636; color: #f2d5e5; border: 1px solid #79627f; }
+.btn { box-shadow: 0 8px 20px #0003; }
+.quick-card, .custom-section, .card { background: #25202d; box-shadow: 0 12px 28px #0003; }
+.section-note, .ghost-image-note, .ghost-order-note, .ghost-hint { color: #c9bcd4; }
+.filter-btn { background: #2c2535; color: #e0c7ef; border: 1px solid #594963; }
+.filter-btn.active, .filter-btn:hover { background: #d6b6eb; color: #241a2c; }
+.product-card { background: #25202d; background-image: none; border-color: #55455f; box-shadow: 0 12px 30px #0003; }
+.category { color: #d6b6eb; }
+.price { color: #f1b4d2; }
+.placeholder-img { background: linear-gradient(135deg, #392a40, #233a3e); color: #e6ceef; }
+.available { background: #2c4333; color: #c8e9ca; }
+.ghost-info { color: #f2eaf7; }
+.ghost-picker { background: #2d2535; border-color: #665171; }
+.ghost-design-options { border-top-color: #51415c !important; }
+.ghost-design-option { background: #27212f; border-color: #574661; color: #f2eaf7; }
+.ghost-design-option:has(input:checked), .ghost-size-option:has(input:checked) { border-color: #d8b9ed; background: #493451; }
+.ghost-size-option { border-color: #574661; }
+.ghost-size-option small { color: #d6c7df; }
+.ghost-color-row select { background: #2d2535; color: #f2eaf7; border-color: #756080; }
+.ghost-color-dot { border-color: #a58bb4; }
+.ghost-pack-options label { border-color: #756080; }
+.ghost-save { background: #314b35; color: #d6efbd; }
+.ghost-extra-choices .ghost-choice { border-top-color: #574661; }
+.ghost-order-summary { background: #342a3f; }
+.ghost-order-summary strong { color: #f2c1dc; }
+.ghost-order-summary p, .ghost-copy-status { color: #c5e4ba; }
+.ghost-order-summary small { color: #d1c2dc; }
+.ghost-order-link { background: #d6b6eb; color: #241a2c; }
+.ghost-order-link:hover { background: #e5cafa; }
+.ghost-show-collection, .ghost-copy, .brand-print-replay { background: #302636; color: #e8ceef; border-color: #7a6487; }
+.ghost-copy-fallback { background: #211b28; color: #f2eaf7; border-color: #7a6487; }
+.ghost-product :focus-visible, .brand-print-replay:focus-visible { outline-color: #b7e7e0; }
+.ghost-design-option:has(input:focus-visible), .ghost-size-option:has(input:focus-visible) { outline-color: #b7e7e0; }
+.ghost-form input[type="radio"] { accent-color: #dbb9ef; }
+.page-header { background: linear-gradient(135deg, #44314f, #293d40, #483042); animation: none; color: #f2eaf7; }
+.creator-card, .social-card { background: linear-gradient(135deg, #3c2e45, #293e40); color: #eddbf4; }
+footer { background: #110e16; color: #d1c1dd; border-top: 1px solid #3b3047; }
+footer a { color: #e7c6e2; }
+.sparkle { opacity: .4; box-shadow: 0 0 8px #ecd4f0, 0 0 14px #d6b6eb50; }
