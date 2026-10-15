@@ -1,8 +1,9 @@
-/* Print the original logo in synchronized layers. The image remains visible
-   without JavaScript, on image errors, or when reduced motion is preferred. */
+/* The logo's own printer head prints the separate MB3D Creations wordmark. */
 document.querySelectorAll("[data-logo-printer]").forEach(printer => {
     const stage = printer.querySelector(".brand-print-stage");
     const image = printer.querySelector(".brand-logo-image");
+    const head = printer.querySelector(".brand-actual-printhead");
+    const images = [image, head];
     const replay = printer.querySelector(".brand-print-replay");
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = null;
@@ -12,12 +13,14 @@ document.querySelectorAll("[data-logo-printer]").forEach(printer => {
         frame = null;
         stage.classList.remove("is-printing");
         image.style.clipPath = "none";
+        stage.style.setProperty("--print-y", "0%");
+        stage.style.setProperty("--nozzle-x", "50%");
         replay.hidden = motion.matches;
         replay.disabled = false;
     }
 
     function printLogo() {
-        if (motion.matches || !image.complete || !image.naturalWidth) {
+        if (motion.matches || images.some(asset => !asset.complete || !asset.naturalWidth)) {
             finish();
             return;
         }
@@ -39,12 +42,12 @@ document.querySelectorAll("[data-logo-printer]").forEach(printer => {
                 return;
             }
             const layer = Math.floor(progress * layers);
-            const layerProgress = progress * layers - layer;
-            const sweep = layer % 2 ? 1 - layerProgress : layerProgress;
+            const pass = progress * 12;
+            const sweep = Math.floor(pass) % 2 ? 1 - (pass % 1) : pass % 1;
             const height = 100 - layer / layers * 100;
             image.style.clipPath = `inset(${height}% 0 0 0)`;
             stage.style.setProperty("--print-y", `${height}%`);
-            stage.style.setProperty("--nozzle-x", `${9 + sweep * 82}%`);
+            stage.style.setProperty("--nozzle-x", `${14 + sweep * 61}%`);
             frame = requestAnimationFrame(step);
         }
         frame = requestAnimationFrame(step);
@@ -52,9 +55,17 @@ document.querySelectorAll("[data-logo-printer]").forEach(printer => {
 
     replay.addEventListener("click", printLogo);
     if (motion.addEventListener) motion.addEventListener("change", finish);
-    if (image.complete) printLogo();
-    else {
-        image.addEventListener("load", printLogo, { once: true });
-        image.addEventListener("error", finish, { once: true });
+    let started = false;
+    function startWhenReady() {
+        if (!started && images.every(asset => asset.complete && asset.naturalWidth)) {
+            started = true;
+            printLogo();
+        }
     }
+    images.forEach(asset => {
+        asset.addEventListener("load", startWhenReady, { once: true });
+        asset.addEventListener("error", finish, { once: true });
+    });
+    if (motion.matches) finish();
+    else startWhenReady();
 });
